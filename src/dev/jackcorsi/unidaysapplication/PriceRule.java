@@ -38,6 +38,7 @@ public abstract class PriceRule implements Comparable<PriceRule> {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("base total");
             basket.forEach((Long itemId, Integer quantity) -> {
                 Item item = Item.byId(itemId);
                 bill.addToItemTotal(item.getBasePrice().multiply(new BigDecimal(quantity)));
@@ -54,6 +55,7 @@ public abstract class PriceRule implements Comparable<PriceRule> {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("delivery");
             if (!basket.isEmpty() && bill.getItemTotal().compareTo(new BigDecimal(50)) < 0) {
                 bill.addToDelivery(new BigDecimal(7));
             }

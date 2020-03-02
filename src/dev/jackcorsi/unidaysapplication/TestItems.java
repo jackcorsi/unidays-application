@@ -21,6 +21,7 @@ public class TestItems {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("item B");
             Integer quantity = basket.get(itemB.getId());
             if (quantity != null) {
                 BigDecimal pairs = new BigDecimal(quantity / 2);
@@ -39,6 +40,7 @@ public class TestItems {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("item C");
             Integer quantity = basket.get(itemC.getId());
             if (quantity != null) {
                 BigDecimal triples = new BigDecimal(quantity / 3);
@@ -57,6 +59,7 @@ public class TestItems {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("item D");
             Integer quantity = basket.get(itemD.getId());
             if (quantity != null) {
                 BigDecimal pairs = new BigDecimal(quantity / 2);
@@ -74,6 +77,7 @@ public class TestItems {
 
         @Override
         public void apply(Bill bill, Map<Long, Integer> basket) {
+            System.out.println("item E");
             Integer quantity = basket.get(itemE.getId());
             if (quantity != null) {
                 BigDecimal triples = new BigDecimal(quantity / 3);
